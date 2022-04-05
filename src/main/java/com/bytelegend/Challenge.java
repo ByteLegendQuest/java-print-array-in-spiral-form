@@ -34,11 +34,13 @@ public class Challenge {
             for (int i = top + 1; i <= bottom; i++) {
                 res[idx++] = matrix[i][right];
             }
-            for (int i = right - 1; i >= left; i--) {
-                res[idx++] = matrix[bottom][i];
-            }
-            for (int i = bottom - 1; i > top; i--) {
-                res[idx++] = matrix[i][left];
+            if (left < right && top < bottom) {
+                for (int i = right - 1; i > left; i--) {
+                    res[idx++] = matrix[bottom][i];
+                }
+                for (int i = bottom; i > top; i--) {
+                    res[idx++] = matrix[i][left];
+                }
             }
             left++;
             right--;
