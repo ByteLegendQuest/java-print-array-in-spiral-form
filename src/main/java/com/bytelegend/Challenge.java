@@ -7,8 +7,8 @@ public class Challenge {
         System.out.println(
                 Arrays.toString(
                         spiralOrder(
-                                new int[][] {
-                                    {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}
+                                new int[][]{
+                                        {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}
                                 })));
     }
 
@@ -22,6 +22,13 @@ public class Challenge {
      * <p>Return `[1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10]`.
      */
     public static int[] spiralOrder(int[][] matrix) {
-        return null;
+        int[] array = new int[matrix.length * matrix.length];
+        int k = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                array[k++] = matrix[i][j];
+            }
+        }
+        return array;
     }
 }
