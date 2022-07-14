@@ -58,7 +58,10 @@ public class Challenge {
                 startCol++;
             }
         }
-        int [] answer = finish.toArray();
+        int[] answer = finish.stream()
+                .mapToInt(Integer::intValue)
+                .toArray();
+        return answer;
     }
 }
 
