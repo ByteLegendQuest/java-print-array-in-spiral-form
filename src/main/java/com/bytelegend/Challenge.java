@@ -32,8 +32,9 @@ public class Challenge {
 
         while (startRow < endRow && startCol < endCol) {
 
-            for (int i = startCol; i < endCol; i++)
+            for (int i = startCol; i < endCol; i++){
                 finish.add(matrix[startRow][i]);
+            }
             startRow++;
 
             for (int i = startRow; i < endRow; i++) {
@@ -42,14 +43,16 @@ public class Challenge {
             endCol--;
 
             if (startRow < endRow) {
-                for (int i = endCol - 1; i >= startCol; i--)
+                for (int i = endCol - 1; i >= startCol; i--){
                     finish.add(matrix[endRow - 1][i]);
+                }
                 endRow--;
             }
 
             if (startCol < endCol) {
-                for (int i = endRow - 1; i >= startRow; i--)
+                for (int i = endRow - 1; i >= startRow; i--){
                     finish.add(matrix[i][startCol]);
+                }
                 startCol++;
             }
         }
