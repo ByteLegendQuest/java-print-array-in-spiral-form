@@ -22,6 +22,37 @@ public class Challenge {
      * <p>Return `[1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10]`.
      */
     public static int[] spiralOrder(int[][] matrix) {
-        return null;
+        List<Integer> finish = new ArrayList<>();
+
+        int startRow = 0;
+        int endRow = matrix.length;
+        int startCol = 0;
+        int endCol = matrix[0].length;
+
+
+        while (startRow < endRow && startCol < endCol) {
+
+            for (int i = startCol; i < endCol; i++)
+                finish.add(matrix[startRow][i]);
+            startRow++;
+
+            for (int i = startRow; i < endRow; i++) {
+                finish.add(matrix[i][endCol - 1]);
+            }
+            endCol--;
+
+            if (startRow < endRow) {
+                for (int i = endCol - 1; i >= startCol; i--)
+                    finish.add(matrix[endRow - 1][i]);
+                endRow--;
+            }
+
+            if (startCol < endCol) {
+                for (int i = endRow - 1; i >= startRow; i--)
+                    finish.add(matrix[i][startCol]);
+                startCol++;
+            }
+        }
     }
 }
+
