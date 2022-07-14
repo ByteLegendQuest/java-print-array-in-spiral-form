@@ -1,6 +1,8 @@
 package com.bytelegend;
 
 import java.util.Arrays;
+import java.util.*;
+
 
 public class Challenge {
     public static void main(String[] args) {
@@ -50,12 +52,13 @@ public class Challenge {
             }
 
             if (startCol < endCol) {
-                for (int i = endRow - 1; i >= startRow; i--) {
+                for (int i = endRow - 1; i >= startRow; i--){
                     finish.add(matrix[i][startCol]);
                 }
                 startCol++;
             }
         }
+        int [] answer = finish.toArray();
     }
 }
 
