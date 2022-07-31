@@ -30,6 +30,7 @@ public class Challenge {
             for (int j = flag ? 0 : n - 1; flag ? j < n : j >= 0; j += flag ? 1 : -1) {
                 ans[idx++] = matrix[i][j];
             }
+            flag = !flag;
         }
         return ans;
     }
