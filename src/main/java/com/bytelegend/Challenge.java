@@ -21,16 +21,24 @@ public class Challenge {
      *
      * <p>Return `[1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10]`.
      */
-    public static int[] spiralOrder(int[][] matrix) {
-        int m = matrix.length, n = matrix[0].length;
-        boolean flag = true;
+ public static int[] spiralOrder(int[][] matrix) {
+        int[][] dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        int m = matrix.length, n = matrix[0].length, p = 0;
         int[] ans = new int[m * n];
-        int idx = 0;
-        for (int i = 0; i < m; i++) {
-            for (int j = flag ? 0 : n - 1; flag ? j < n : j >= 0; j += flag ? 1 : -1) {
-                ans[idx++] = matrix[i][j];
+        boolean[][] visited = new boolean[m][n];
+        for (int idx = 0, x = 0, y = 0; idx < m * n; idx++) {
+            ans[idx] = matrix[x][y];
+            visited[x][y] = true;
+            int[] dir = dirs[p];
+            int nx = x + dir[0], ny = y + dir[1];
+            if (nx < 0 || nx >= m || ny < 0 || ny >= n || visited[nx][ny]) {
+                p = (p + 1) % 4;
+                dir = dirs[p];
+                nx = x + dir[0];
+                ny = y + dir[1];
             }
-            flag = !flag;
+            x = nx;
+            y = ny;
         }
         return ans;
     }
