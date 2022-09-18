@@ -22,6 +22,28 @@ public class Challenge {
      * <p>Return `[1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10]`.
      */
     public static int[] spiralOrder(int[][] matrix) {
-        return null;
+        int[] arr = new int[16];
+        int m = 0;
+        int n = 0;
+        int i = 0;
+        for (m = 0, n = 0; n < 4; n++, i++) {
+            arr[i] = matrix[m][n];
+        }
+        for (m = 1, n = 3; m < 4; m++, i++) {
+            arr[i] = matrix[m][n];
+        }
+        for (m = 3, n = 2; n >= 0; n--, i++) {
+            arr[i] = matrix[m][n];
+        }
+        for (m = 2, n = 0; m > 0; m--, i++) {
+            arr[i] = matrix[m][n];
+        }
+        for (m = 1, n = 1; n < 3; n++, i++) {
+            arr[i] = matrix[m][n];
+        }
+        for (m = 2, n = 2; n > 0; n--, i++) {
+            arr[i] = matrix[m][n];
+        }
+        return arr;
     }
 }
