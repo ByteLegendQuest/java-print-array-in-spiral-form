@@ -35,17 +35,17 @@ public class Challenge {
                 index++;
             }
             top++;
-            for (int i = top; i <= bottom; i++) {
+            for (int i = top; i <= bottom && index < count; i++) {
                 ret[index] = matrix[i][right];
                 index++;
             }
             right--;
-            for (int i = right; i >= left; i--) {
+            for (int i = right; i >= left && index < count; i--) {
                 ret[index] = matrix[bottom][i];
                 index++;
             }
             bottom--;
-            for (int i = bottom; i >= top; i--) {
+            for (int i = bottom; i >= top && index < count; i--) {
                 ret[index] = matrix[i][left];
                 index++;
             }
