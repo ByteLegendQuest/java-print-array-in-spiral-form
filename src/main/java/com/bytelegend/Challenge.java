@@ -1,6 +1,8 @@
 package com.bytelegend;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Challenge {
     public static void main(String[] args) {
@@ -8,7 +10,7 @@ public class Challenge {
                 Arrays.toString(
                         spiralOrder(
                                 new int[][] {
-                                    {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}
+                                        {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}
                                 })));
     }
 
@@ -35,7 +37,7 @@ public class Challenge {
         r[cnt++] = matrix[i][j];
         while (true) {
             int cntBefore = cnt;
-            while(canVisit(set, i, j + 1, mi, mj)) {
+            while (canVisit(set, i, j + 1, mi, mj)) {
                 set.add(i + "_" + (j + 1));
                 r[cnt++] = matrix[i][j + 1];
                 j++;
@@ -66,3 +68,4 @@ public class Challenge {
         return (i < imax && j < jmax && i >= 0 && j >= 0) && !set.contains(i + "_" + j);
     }
 }
+
