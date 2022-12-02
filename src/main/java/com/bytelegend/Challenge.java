@@ -73,7 +73,7 @@ public class Challenge {
                 count++;
             }
 
-            for(int j = x; j > i + 1; j--){
+            for (int j = x; j > i + 1; j--) {
                 x = x - 1;
                 ints[count] = matrix[x][y];
                 if (count == index - 1) {
