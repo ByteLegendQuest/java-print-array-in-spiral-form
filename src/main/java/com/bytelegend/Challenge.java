@@ -44,11 +44,9 @@ public class Challenge {
 
         int count = 0;
         for (int i = 0; i < matrix.length; i++) {
-            int x = i; //行数记录
-            int y = i; //列数记录
-            //x坐标向右移动
+            int x = i; 
+            int y = i; 
             for (int j = y; j < matrix[i].length - i; j++) {
-                //记录当前坐标
                 y = j;
                 ints[count] = matrix[x][y];
                 if (count == index - 1) {
@@ -57,9 +55,7 @@ public class Challenge {
                 count++;
             }
 
-            //y坐标向下移动
             for (int j = i + 1; j < matrix.length - i; j++) {
-                //记录当前坐标
                 x = j;
                 ints[count] = matrix[x][y];
                 if (count == index - 1) {
@@ -68,9 +64,7 @@ public class Challenge {
                 count++;
             }
 
-            //x坐标向左移动
             for (int j = matrix[x].length - 1; j > 0; j--) {
-                //记录当前坐标
                 y = y - 1;
                 ints[count] = matrix[x][y];
                 if (count == index - 1) {
@@ -79,9 +73,7 @@ public class Challenge {
                 count++;
             }
 
-            //y坐标向上移动
             for(int j = x; j > i + 1; j--){
-                //记录当前坐标
                 x = x - 1;
                 ints[count] = matrix[x][y];
                 if (count == index - 1) {
