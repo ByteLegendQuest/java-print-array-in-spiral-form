@@ -23,7 +23,7 @@ public class Challenge {
      */
     public static int[] spiralOrder(int[][] matrix) {
         int index = 0;
-        List<Map> list =new ArrayList<>();
+        List<Map> list = new ArrayList<>();
 
         for (int i = 0; i < matrix.length; i++) {
             int[] matrix1 = matrix[i];
@@ -31,15 +31,15 @@ public class Challenge {
             Map map = new HashMap();
             for (int j = 0; j < matrix1.length; j++) {
                 int matrix2 = matrix[i][j];
-                str +=matrix2 +"   ";
+                str+ = matrix2 +"   ";
                 index++;
-                map.put("x",i + 1);
-                map.put("y",matrix[i].length);
+                map.put("x", i + 1);
+                map.put("y", matrix[i].length);
             }
             list.add(map);
             System.out.println(str);
         }
-        int [] ints =new int[index];
+        int [] ints = new int[index];
 
 
         int count = 0;
