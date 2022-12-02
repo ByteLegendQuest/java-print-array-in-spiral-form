@@ -30,7 +30,7 @@ public class Challenge {
             Map map = new HashMap();
             for (int j = 0; j < matrix1.length; j++) {
                 int matrix2 = matrix[i][j];
-                str+ = matrix2 +"   ";
+                str +=matrix2 + "   ";
                 index++;
             }
             System.out.println(str);
