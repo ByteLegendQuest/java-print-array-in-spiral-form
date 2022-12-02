@@ -27,7 +27,6 @@ public class Challenge {
         for (int i = 0; i < matrix.length; i++) {
             int[] matrix1 = matrix[i];
             String str = "";
-            Map map = new HashMap();
             for (int j = 0; j < matrix1.length; j++) {
                 int matrix2 = matrix[i][j];
                 str +=matrix2 + "   ";
