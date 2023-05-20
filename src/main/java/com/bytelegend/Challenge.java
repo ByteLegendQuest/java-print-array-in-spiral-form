@@ -25,7 +25,7 @@ public class Challenge {
         if (matrix == null || matrix.length == 0 || matrix[0].length) {
             return new int[0];
         }
-        int m = matrix.length
+        int m = matrix.length;
         int n = matrix[0].length;
         boolean[][] seen = new boolean[m][n];
         int[] ans = new int[m * n];
