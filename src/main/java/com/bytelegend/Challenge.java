@@ -32,7 +32,7 @@ public class Challenge {
             for (int i = left; i <= right && count < m * n; i++) {
                 ans[count++] = matrix[top][i];
             }
-            up++;
+            top++;
             for (int i = top; i <= bottom && count < m * n; i++) {
                 ans[count++] = matrix[i][right];
             }
