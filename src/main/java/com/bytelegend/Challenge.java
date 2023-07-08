@@ -25,7 +25,7 @@ public class Challenge {
         int m = matrix.length, n = matrix[0].length;
         int[] ans = new int[m * n];
 
-        int left = 0, right = m - 1, top = 0, bottom = n - 1;
+        int left = 0, right = n - 1, top = 0, bottom = m - 1;
         int count = 0;
 
         while (count < m * n) {
